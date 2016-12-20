@@ -2,6 +2,7 @@ package com.badun.elsearchdemo.data.entity;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.elasticsearch.annotations.Document;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import java.util.Date;
 
@@ -13,7 +14,8 @@ public class UserAction {
 
     @Id
     private String actionId;
-    private Date timestamp;
+    private String username;
+    private String timestamp;
     private String userId;
     private String ip;
     private String url;
@@ -26,11 +28,11 @@ public class UserAction {
         this.actionId = actionId;
     }
 
-    public Date getTimestamp() {
+    public String getTimestamp() {
         return timestamp;
     }
 
-    public void setTimestamp(Date timestamp) {
+    public void setTimestamp(String timestamp) {
         this.timestamp = timestamp;
     }
 
@@ -56,5 +58,13 @@ public class UserAction {
 
     public void setUrl(String url) {
         this.url = url;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
     }
 }
